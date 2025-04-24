@@ -1,0 +1,143 @@
+{
+	"doctype": "<!DOCTYPE html>",
+	"html": {
+		"lang": "es",
+		"head": {
+			"meta": [
+				{ "charset": "UTF-8" },
+				{
+					"name": "viewport",
+					"content": "width=device-width, initial-scale=1.0"
+				}
+			],
+			"title": "Tienda de Ropa",
+			"link": [{ "rel": "stylesheet", "href": "styles.css" }]
+		},
+		"body": {
+			"header": {
+				"tag": "header",
+				"class": "flex items-center justify-between p-4 bg-white shadow-md",
+				"children": [
+					{
+						"tag": "div",
+						"class": "logo",
+						"children": [
+							{
+								"tag": "img",
+								"src": "https://via.placeholder.com/150x50?text=Logo",
+								"alt": "Logo Tienda de Ropa",
+								"class": "h-12"
+							}
+						]
+					},
+					{
+						"tag": "nav",
+						"class": "space-x-4",
+						"children": [
+							{
+								"tag": "a",
+								"href": "#",
+								"text": "Inicio",
+								"class": "hover:underline"
+							},
+							{
+								"tag": "a",
+								"href": "#",
+								"text": "Tienda",
+								"class": "hover:underline"
+							},
+							{
+								"tag": "a",
+								"href": "#",
+								"text": "Contacto",
+								"class": "hover:underline"
+							}
+						]
+					}
+				]
+			},
+			"layout": {
+				"tag": "div",
+				"class": "flex",
+				"children": [
+					{
+						"tag": "aside",
+						"class": "w-64 p-4 bg-gray-100",
+						"children": [
+							{
+								"tag": "h2",
+								"class": "text-lg font-semibold mb-2",
+								"text": "Categorías"
+							},
+							{
+								"tag": "ul",
+								"class": "space-y-1",
+								"children": [
+									{ "tag": "li", "text": "Camisetas" },
+									{ "tag": "li", "text": "Pantalones" },
+									{ "tag": "li", "text": "Vestidos" },
+									{ "tag": "li", "text": "Sudaderas" },
+									{ "tag": "li", "text": "Camisas" },
+									{ "tag": "li", "text": "Chaquetas" }
+								]
+							}
+						]
+					},
+					{
+						"tag": "main",
+						"class": "flex-1 p-4",
+						"children": [
+							{
+								"tag": "section",
+								"id": "product-grid",
+								"class": "grid grid-cols-1 md:grid-cols-2 gap-4",
+								"repeat": {
+									"for": "product",
+									"in": "products"
+								},
+								"template": {
+									"tag": "article",
+									"class": "bg-white rounded-lg shadow p-4",
+									"children": [
+										{
+											"tag": "img",
+											"class": "w-full h-auto object-cover",
+											"bind": "product.imageUrl",
+											"alt": "product.name"
+										},
+										{
+											"tag": "h3",
+											"class": "text-lg font-semibold mt-2",
+											"bind": "product.name"
+										},
+										{
+											"tag": "p",
+											"class": "text-gray-600",
+											"bind": "product.description"
+										},
+										{
+											"tag": "span",
+											"class": "font-bold mt-1 block",
+											"bind": "product.price"
+										}
+									]
+								}
+							}
+						]
+					}
+				]
+			},
+			"footer": {
+				"tag": "footer",
+				"class": "p-4 bg-gray-200 text-center",
+				"children": [
+					{
+						"tag": "p",
+						"class": "text-sm text-gray-700",
+						"text": "© 2025 Tienda de Ropa. Todos los derechos reservados."
+					}
+				]
+			}
+		}
+	}
+}
